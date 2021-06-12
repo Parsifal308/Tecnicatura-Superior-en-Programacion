@@ -1,0 +1,2 @@
+ejerciciodiagramainvestigacionpolicial.Localidad
+ejerciciodiagramainvestigacionpolicial.Direccion

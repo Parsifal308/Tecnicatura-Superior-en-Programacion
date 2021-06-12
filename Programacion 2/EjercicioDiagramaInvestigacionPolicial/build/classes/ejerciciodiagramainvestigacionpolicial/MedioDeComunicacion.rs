@@ -1,0 +1,2 @@
+ejerciciodiagramainvestigacionpolicial.TipoMedio
+ejerciciodiagramainvestigacionpolicial.MedioDeComunicacion
