@@ -138,6 +138,10 @@ public class MsjCursado extends javax.swing.JFrame {
         return jLabelMensjae;
     }
 
+    public void setjLabelMensjae(String jLabelMensjae) {
+        this.jLabelMensjae.setText(jLabelMensjae);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAceptar;
     private javax.swing.JLabel jLabelMensjae;

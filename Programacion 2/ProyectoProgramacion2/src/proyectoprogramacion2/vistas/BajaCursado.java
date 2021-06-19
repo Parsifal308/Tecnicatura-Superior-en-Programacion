@@ -168,6 +168,14 @@ public class BajaCursado extends javax.swing.JFrame {
         return jTextFieldCodMat;
     }
 
+    public void setjTextFieldAlumnoDNI(String jTextFieldAlumnoDNI) {
+        this.jTextFieldAlumnoDNI.setText(jTextFieldAlumnoDNI);
+    }
+
+    public void setjTextFieldCodMat(String jTextFieldCodMat) {
+        this.jTextFieldCodMat.setText(jTextFieldCodMat);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAceptar;
     private javax.swing.JButton jButtonCancelar;

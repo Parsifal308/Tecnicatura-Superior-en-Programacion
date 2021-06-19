@@ -5,19 +5,27 @@
  */
 package proyectoprogramacion2.modelos;
 
+import proyectoprogramacion2.datos.MateriaDAO;
+
 /**
  *
  * @author Guillermo Marinero
  */
 public class Materia {
+    private MateriaDAO materiaDAO = new MateriaDAO();
     private int codMateria;
     private String nombre;
-    private Profesor profesor;
+    private int profesorDNI;
+    private String nombreProfe;
 
-    public Materia(int codMateria, String nombre, Profesor profesor) {
+    public Materia(int codMateria, String nombre, int profesor, String nombreProfe) {
         this.codMateria = codMateria;
         this.nombre = nombre;
-        this.profesor = profesor;
+        this.profesorDNI = profesor;
+        this.nombreProfe = nombreProfe;
+    }
+
+    public Materia() {
     }
 
     public int getCodMateria() {
@@ -28,8 +36,8 @@ public class Materia {
         return nombre;
     }
 
-    public Profesor getProfesor() {
-        return profesor;
+    public int getProfesorDNI() {
+        return profesorDNI;
     }
 
     public void setCodMateria(int codMateria) {
@@ -40,9 +48,25 @@ public class Materia {
         this.nombre = nombre;
     }
 
-    public void setProfesor(Profesor profesor) {
-        this.profesor = profesor;
+    public void setProfesorDNI(int profesor) {
+        this.profesorDNI = profesor;
     }
-    
+
+    public MateriaDAO getMateriaDAO() {
+        return materiaDAO;
+    }
+    public void cleanAtrib(){
+        this.setCodMateria(0);
+        this.setNombre(null);
+        this.setProfesorDNI(0);
+    }
+
+    public String getNombreProfe() {
+        return nombreProfe;
+    }
+
+    public void setNombreProfe(String nombreProfe) {
+        this.nombreProfe = nombreProfe;
+    }
     
 }

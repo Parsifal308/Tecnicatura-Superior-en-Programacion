@@ -21,7 +21,9 @@ public class AlumnoDAO extends Driver{
     private final String SQL_UPDATE_CARRERA = "UPDATE alumno SET alumno_codInscripcion=? WHERE alumno_dni=?";
     private final String SQL_FIND = "SELECT * FROM alumno WHERE alumno_dni=?";
     
+
     
+    //FUNCIONA
     public boolean crearAlumno(Alumno alumno) throws SQLException, ClassNotFoundException{
         try{
             this.conectarBD();
@@ -46,31 +48,34 @@ public class AlumnoDAO extends Driver{
             this.desconectarBD();
         }
     }
+    
+    //FUNCIONA
     public boolean actualizarAlumno(Alumno alumno) throws SQLException, ClassNotFoundException{
         try{
             this.conectarBD();
             this.consulta = this.conn.prepareStatement(SQL_UPDATE);
             
-            this.consulta.setInt(1, alumno.getDni());
-            this.consulta.setString(2, alumno.getNombre());
-            this.consulta.setString(3, alumno.getApellido());
-            this.consulta.setString(4, alumno.getDomicilio());
-            this.consulta.setInt(5, alumno.getTelefono());
+            this.consulta.setInt(5, alumno.getDni());
+            this.consulta.setString(1, alumno.getNombre());
+            this.consulta.setString(2, alumno.getApellido());
+            this.consulta.setString(3, alumno.getDomicilio());
+            this.consulta.setInt(4, alumno.getTelefono());
             
             this.consulta.executeUpdate();
             
-            System.out.println("Alumno Agregado Con Exito");
+            System.out.println("Alumno actualizado con exito");
             
             return true;
 
         }catch(SQLException e){
-            System.out.println("Error al Crear : " + e);
+            System.out.println("Error al modificar alumno : " + e);
             return false;   
         }finally {
             this.desconectarBD();
         }
     }
     
+    //FUNCIONA
     public boolean eliminarAlumno(int alumnoID) throws SQLException, ClassNotFoundException{
         try{
             this.conectarBD();
@@ -80,25 +85,25 @@ public class AlumnoDAO extends Driver{
             
             this.consulta.executeUpdate();
             
-            System.out.println("Alumno Agregado Con Exito");
+            System.out.println("Alumno eliminado con exito");
             
             return true;
 
         }catch(SQLException e){
-            System.out.println("Error al Crear : " + e);
+            System.out.println("Error al eliminar alumno : " + e);
             return false;   
         }finally {
             this.desconectarBD();
         }
     }
         
-    public ArrayList<Alumno> leerAlumnso() throws ClassNotFoundException, SQLException{
+    public ArrayList<Alumno> leerAlumnos() throws ClassNotFoundException, SQLException{
         ArrayList<Alumno> listaAlumnos = new ArrayList<Alumno>();
         try{
             this.conectarBD();
             this.consulta = this.conn.prepareStatement(SQL_SELECT);
         
-            this.consulta.executeQuery();
+            result = this.consulta.executeQuery();
         
             while(this.result.next()){
                 Alumno alumno = new Alumno();
@@ -113,9 +118,9 @@ public class AlumnoDAO extends Driver{
                 listaAlumnos.add(alumno);
             }
         }catch(SQLException e){
-            System.out.println("se produjo un error: "+e);
+            System.out.println("se produjo un error al leer alumnos de la base de datos: "+e);
         } finally {
-            this.desconectarBD(this.result);
+            this.desconectarBD(result);
         }
         return listaAlumnos;
     }  
@@ -137,7 +142,7 @@ public class AlumnoDAO extends Driver{
                 
             }
         }catch(SQLException e){
-            System.out.println("Error al Buscar Alumno : " + e);            
+            System.out.println("Error al buscar alumno : " + e);            
         }finally{
             this.desconectarBD(this.result);
         }

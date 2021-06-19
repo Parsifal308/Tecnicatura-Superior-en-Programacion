@@ -203,6 +203,18 @@ public class ModificarMateria extends javax.swing.JFrame {
         return jTextFieldNombre;
     }
 
+    public void setjTextFieldCod(String jTextFieldCod) {
+        this.jTextFieldCod.setText(jTextFieldCod);
+    }
+
+    public void setjTextFieldDocente(String jTextFieldDocente) {
+        this.jTextFieldDocente.setText(jTextFieldDocente);
+    }
+
+    public void setjTextFieldNombre(String jTextFieldNombre) {
+        this.jTextFieldNombre.setText(jTextFieldNombre);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAceptar;
     private javax.swing.JButton jButtonCancelar;

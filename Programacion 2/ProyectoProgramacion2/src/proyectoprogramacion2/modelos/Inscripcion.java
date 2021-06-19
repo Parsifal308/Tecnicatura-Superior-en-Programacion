@@ -6,65 +6,73 @@
 package proyectoprogramacion2.modelos;
 
 import java.sql.Date;
+import proyectoprogramacion2.datos.InscripcionDAO;
 
 /**
  *
  * @author Guillermo Marinero
  */
 public class Inscripcion {
-    private int cod;
+    private InscripcionDAO inscripcionDAO = new InscripcionDAO();
+    private int codInscrip;
     private String nombre;
-    private Date fecha;
-    private Carrera carrera;
-    private Alumno alumno;
+    private int codCarrera;
+    private int alumnoDNI;
 
-    public Inscripcion(int cod, String nombre, Date fecha, Carrera carrera, Alumno alumno) {
-        this.cod = cod;
+
+    public Inscripcion() {
+    }
+
+    public Inscripcion(int cod, String nombre, int carrera, int dni) {
+        this.codInscrip = cod;
         this.nombre = nombre;
-        this.fecha = fecha;
-        this.carrera = carrera;
-        this.alumno = alumno;
+        this.codCarrera = carrera;
+        this.alumnoDNI = dni;
     }
 
     public int getCod() {
-        return cod;
+        return codInscrip;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public Carrera getCarrera() {
-        return carrera;
-    }
-
-    public Alumno getAlumno() {
-        return alumno;
+    public int getCarrera() {
+        return codCarrera;
     }
 
     public void setCod(int cod) {
-        this.cod = cod;
+        this.codInscrip = cod;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
+    public void setCarrera(int carrera) {
+        this.codCarrera = carrera;
+    }
+    public void cleanAtrib(){
+        this.setCarrera(0);
+        this.setNombre(null);
+        this.setCod(0);
     }
 
-    public void setCarrera(Carrera carrera) {
-        this.carrera = carrera;
+    public InscripcionDAO getInscripcionDAO() {
+        return inscripcionDAO;
     }
 
-    public void setAlumno(Alumno alumno) {
-        this.alumno = alumno;
+    public int getAlumnoDNI() {
+        return alumnoDNI;
     }
+
+    public void setAlumnoDNI(int alumnoDNI) {
+        this.alumnoDNI = alumnoDNI;
+    }
+  
+
+   
     
     
 }

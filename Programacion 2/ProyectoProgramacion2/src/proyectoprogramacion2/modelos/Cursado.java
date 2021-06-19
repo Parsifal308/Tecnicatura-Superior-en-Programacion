@@ -5,11 +5,14 @@
  */
 package proyectoprogramacion2.modelos;
 
+import proyectoprogramacion2.datos.CursadoDAO;
+
 /**
  *
  * @author Guillermo Marinero
  */
 public class Cursado {
+    private CursadoDAO cursadoDAO = new CursadoDAO();
     private int alumnoDNI;
     private int codMateria;
     private int notaObtenida;
@@ -20,8 +23,7 @@ public class Cursado {
         this.notaObtenida = notaObtenida;
     }
 
-    public int getAlumno() {
-        return alumnoDNI;
+    public Cursado() {
     }
 
     public int getCodMateria() {
@@ -43,6 +45,18 @@ public class Cursado {
     public void setNotaObtenida(int notaObtenida) {
         this.notaObtenida = notaObtenida;
     }
-    
+
+    public CursadoDAO getCursadoDAO() {
+        return cursadoDAO;
+    }
+
+    public int getAlumnoDNI() {
+        return alumnoDNI;
+    }
+    public void cleanAtrib(){
+        this.setAlumno(0);
+        this.setNotaObtenida(0);
+        this.setCodMateria(0);
+    }
     
 }

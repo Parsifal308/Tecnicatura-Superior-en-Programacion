@@ -6,6 +6,7 @@
 package proyectoprogramacion2.modelos;
 
 import java.sql.Date;
+import proyectoprogramacion2.datos.ProfesorDAO;
 
 /**
  *
@@ -13,9 +14,30 @@ import java.sql.Date;
  */
 public class Profesor extends Persona {
     
-    public Profesor(int dni, String nombre, String apellido, Date fechaNac, String domicilio, int telefono) {
-        super(dni, nombre, apellido, fechaNac, domicilio, telefono);
+    ProfesorDAO profesorDAO = new ProfesorDAO();
+    int codMateria;
+
+    public Profesor() {
     }
+
+    public Profesor(int dni, String nombre, String apellido, Date fechaNac, String domicilio, int telefono, int codMateria) {
+        super(dni, nombre, apellido, fechaNac, domicilio, telefono);
+        this.codMateria=codMateria;
+    }
+
+    public ProfesorDAO getProfesorDAO() {
+        return profesorDAO;
+    }
+
+    public int getCodMateria() {
+        return codMateria;
+    }
+
+    public void setCodMateria(int codMateria) {
+        this.codMateria = codMateria;
+    }
+    
+    
     
     
 }

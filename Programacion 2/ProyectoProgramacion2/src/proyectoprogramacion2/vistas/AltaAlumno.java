@@ -240,6 +240,26 @@ public class AltaAlumno extends javax.swing.JFrame {
         return jButtonAceptarAltaAlumno;
     }
 
+    public void setjTextFieldApellido(String jTextFieldApellido) {
+        this.jTextFieldApellido.setText(jTextFieldApellido);
+    }
+
+    public void setjTextFieldDNI(String jTextFieldDNI) {
+        this.jTextFieldDNI.setText(jTextFieldDNI);
+    }
+
+    public void setjTextFieldDom(String jTextFieldDom) {
+        this.jTextFieldDom.setText(jTextFieldDom);
+    }
+
+    public void setjTextFieldNombre(String jTextFieldNombre) {
+        this.jTextFieldNombre.setText(jTextFieldNombre);
+    }
+
+    public void setjTextFieldTel(String jTextFieldTel) {
+        this.jTextFieldTel.setText(jTextFieldTel);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAceptarAltaAlumno;
     private javax.swing.JButton jButtonCancelar;

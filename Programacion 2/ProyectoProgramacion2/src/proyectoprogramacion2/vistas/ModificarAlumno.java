@@ -38,13 +38,11 @@ public class ModificarAlumno extends javax.swing.JFrame {
         jLabelFecha = new javax.swing.JLabel();
         jLabelDom = new javax.swing.JLabel();
         jLabelTel = new javax.swing.JLabel();
-        jLabelEmail = new javax.swing.JLabel();
         jTextFieldNombre = new javax.swing.JTextField();
         jTextFieldApellido = new javax.swing.JTextField();
         jTextFieldDNI = new javax.swing.JTextField();
         jTextFieldDom = new javax.swing.JTextField();
         jTextFieldTel = new javax.swing.JTextField();
-        jTextFieldEmail = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jButtonAceptar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
@@ -65,8 +63,6 @@ public class ModificarAlumno extends javax.swing.JFrame {
         jLabelDom.setText("DOMICILIO:");
 
         jLabelTel.setText("TELEFONO:");
-
-        jLabelEmail.setText("EMAIL:");
 
         javax.swing.GroupLayout jPanelAltaAlumnoLayout = new javax.swing.GroupLayout(jPanelAltaAlumno);
         jPanelAltaAlumno.setLayout(jPanelAltaAlumnoLayout);
@@ -95,11 +91,7 @@ public class ModificarAlumno extends javax.swing.JFrame {
                         .addGroup(jPanelAltaAlumnoLayout.createSequentialGroup()
                             .addComponent(jLabelTel)
                             .addGap(18, 18, 18)
-                            .addComponent(jTextFieldTel))
-                        .addGroup(jPanelAltaAlumnoLayout.createSequentialGroup()
-                            .addComponent(jLabelEmail)
-                            .addGap(18, 18, 18)
-                            .addComponent(jTextFieldEmail)))
+                            .addComponent(jTextFieldTel)))
                     .addComponent(jLabelFecha))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
@@ -128,11 +120,7 @@ public class ModificarAlumno extends javax.swing.JFrame {
                 .addGroup(jPanelAltaAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelTel)
                     .addComponent(jTextFieldTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelAltaAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelEmail)
-                    .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
@@ -158,7 +146,7 @@ public class ModificarAlumno extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButtonCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+                        .addComponent(jButtonCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
                         .addGap(1, 1, 1))
                     .addComponent(jButtonAceptar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -247,9 +235,6 @@ public class ModificarAlumno extends javax.swing.JFrame {
         return jTextFieldDom;
     }
 
-    public JTextField getjTextFieldEmail() {
-        return jTextFieldEmail;
-    }
 
     public JTextField getjTextFieldNombre() {
         return jTextFieldNombre;
@@ -259,13 +244,32 @@ public class ModificarAlumno extends javax.swing.JFrame {
         return jTextFieldTel;
     }
 
+    public void setjTextFieldApellido(String jTextFieldApellido) {
+        this.jTextFieldApellido.setText(jTextFieldApellido);
+    }
+
+    public void setjTextFieldDNI(String jTextFieldDNI) {
+        this.jTextFieldDNI.setText(jTextFieldDNI);
+    }
+
+    public void setjTextFieldDom(String jTextFieldDom) {
+        this.jTextFieldDom.setText(jTextFieldDom);
+    }
+
+    public void setjTextFieldNombre(String jTextFieldNombre) {
+        this.jTextFieldNombre.setText(jTextFieldNombre);
+    }
+
+    public void setjTextFieldTel(String jTextFieldTel) {
+        this.jTextFieldTel.setText(jTextFieldTel);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAceptar;
     private javax.swing.JButton jButtonCancelar;
     private javax.swing.JLabel jLabelApellido;
     private javax.swing.JLabel jLabelDNI;
     private javax.swing.JLabel jLabelDom;
-    private javax.swing.JLabel jLabelEmail;
     private javax.swing.JLabel jLabelFecha;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelTel;
@@ -274,7 +278,6 @@ public class ModificarAlumno extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldApellido;
     private javax.swing.JTextField jTextFieldDNI;
     private javax.swing.JTextField jTextFieldDom;
-    private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldNombre;
     private javax.swing.JTextField jTextFieldTel;
     // End of variables declaration//GEN-END:variables

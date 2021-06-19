@@ -33,7 +33,7 @@ public class ModificarNota extends javax.swing.JFrame {
         jPanelAltaAlumno = new javax.swing.JPanel();
         jLabelAlumno = new javax.swing.JLabel();
         jLabelCodMat = new javax.swing.JLabel();
-        jTextFieldNombre = new javax.swing.JTextField();
+        jTextFieldAlumnoDNI = new javax.swing.JTextField();
         jTextFieldCodMat = new javax.swing.JTextField();
         jLabelNota = new javax.swing.JLabel();
         jTextFieldNota = new javax.swing.JTextField();
@@ -62,7 +62,7 @@ public class ModificarNota extends javax.swing.JFrame {
                     .addGroup(jPanelAltaAlumnoLayout.createSequentialGroup()
                         .addComponent(jLabelAlumno)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTextFieldAlumnoDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelAltaAlumnoLayout.createSequentialGroup()
                         .addGroup(jPanelAltaAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelAltaAlumnoLayout.createSequentialGroup()
@@ -80,7 +80,7 @@ public class ModificarNota extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanelAltaAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelAlumno)
-                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldAlumnoDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelAltaAlumnoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelCodMat)
@@ -208,9 +208,26 @@ public class ModificarNota extends javax.swing.JFrame {
         return jTextFieldCodMat;
     }
 
-    public JTextField getjTextFieldNombre() {
-        return jTextFieldNombre;
+    public JTextField getjTextFieldAlumnoDNI() {
+        return jTextFieldAlumnoDNI;
     }
+
+    public JTextField getjTextFieldNota() {
+        return jTextFieldNota;
+    }
+
+    public void setjTextFieldAlumnoDNI(String jTextFieldAlumnoDNI) {
+        this.jTextFieldAlumnoDNI.setText(jTextFieldAlumnoDNI);
+    }
+
+    public void setjTextFieldCodMat(String jTextFieldCodMat) {
+        this.jTextFieldCodMat.setText(jTextFieldCodMat);
+    }
+
+    public void setjTextFieldNota(String jTextFieldNota) {
+        this.jTextFieldNota.setText(jTextFieldNota);
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAceptar;
@@ -220,8 +237,8 @@ public class ModificarNota extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelNota;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanelAltaAlumno;
+    private javax.swing.JTextField jTextFieldAlumnoDNI;
     private javax.swing.JTextField jTextFieldCodMat;
-    private javax.swing.JTextField jTextFieldNombre;
     private javax.swing.JTextField jTextFieldNota;
     // End of variables declaration//GEN-END:variables
 }

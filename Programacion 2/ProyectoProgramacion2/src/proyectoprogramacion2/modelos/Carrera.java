@@ -5,11 +5,14 @@
  */
 package proyectoprogramacion2.modelos;
 
+import proyectoprogramacion2.datos.CarreraDAO;
+
 /**
  *
  * @author Guillermo Marinero
  */
 public class Carrera {
+    CarreraDAO carreraDAO = new CarreraDAO();
     private int codigo;
     private String nombre;
     private int duracion;
@@ -20,6 +23,9 @@ public class Carrera {
         this.duracion = duracion;
     }
 
+    public Carrera(){
+        
+    }
     public int getCodigo() {
         return codigo;
     }
@@ -43,5 +49,14 @@ public class Carrera {
     public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
+
+    public CarreraDAO getCarreraDAO() {
+        return carreraDAO;
+    }
     
+    public void cleanAtrib(){
+    this.setCodigo(0);
+    this.setNombre(null);
+    this.setDuracion(0);
+    }
 }

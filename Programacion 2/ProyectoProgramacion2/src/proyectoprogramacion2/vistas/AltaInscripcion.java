@@ -33,12 +33,12 @@ public class AltaInscripcion extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabelCod = new javax.swing.JLabel();
         jLabelNombreIns = new javax.swing.JLabel();
-        jLabelFecha = new javax.swing.JLabel();
         jLabelCodCar = new javax.swing.JLabel();
         jTextFieldCod = new javax.swing.JTextField();
         jTextFieldNombre = new javax.swing.JTextField();
-        jTextFieldFecha = new javax.swing.JTextField();
         jTextFieldCodCar = new javax.swing.JTextField();
+        jLabelAlumnoDNI = new javax.swing.JLabel();
+        jTextFieldAlumnoDNI = new javax.swing.JTextField();
         jButtonAceptar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
 
@@ -51,9 +51,9 @@ public class AltaInscripcion extends javax.swing.JFrame {
 
         jLabelNombreIns.setText("NOMBRE INS.:");
 
-        jLabelFecha.setText("FECHA");
-
         jLabelCodCar.setText("COD. CAR.:");
+
+        jLabelAlumnoDNI.setText("DNI ALUMNO:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -67,17 +67,17 @@ public class AltaInscripcion extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTextFieldCod))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabelNombreIns)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFieldNombre))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabelCodCar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTextFieldCodCar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabelFecha)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelNombreIns)
+                            .addComponent(jLabelAlumnoDNI))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFieldFecha)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldAlumnoDNI)
+                            .addComponent(jTextFieldNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -93,9 +93,9 @@ public class AltaInscripcion extends javax.swing.JFrame {
                     .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelFecha)
-                    .addComponent(jTextFieldFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabelAlumnoDNI)
+                    .addComponent(jTextFieldAlumnoDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelCodCar)
                     .addComponent(jTextFieldCodCar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -187,25 +187,41 @@ public class AltaInscripcion extends javax.swing.JFrame {
         return jTextFieldCodCar;
     }
 
-    public JTextField getjTextFieldFecha() {
-        return jTextFieldFecha;
+    public void setjTextFieldCod(String jTextFieldCod) {
+        this.jTextFieldCod.setText(jTextFieldCod);
+    }
+
+    public void setjTextFieldCodCar(String jTextFieldCodCar) {
+        this.jTextFieldCodCar.setText(jTextFieldCodCar);
+    }
+
+    public void setjTextFieldNombre(String jTextFieldNombre) {
+        this.jTextFieldNombre.setText(jTextFieldNombre);
     }
 
     public JTextField getjTextFieldNombre() {
         return jTextFieldNombre;
     }
 
+    public JTextField getjTextFieldAlumnoDNI() {
+        return jTextFieldAlumnoDNI;
+    }
+
+    public void setjTextFieldAlumnoDNI(String jTextFieldAlumnoDNI) {
+        this.jTextFieldAlumnoDNI.setText(jTextFieldAlumnoDNI);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAceptar;
     private javax.swing.JButton jButtonCancelar;
+    private javax.swing.JLabel jLabelAlumnoDNI;
     private javax.swing.JLabel jLabelCod;
     private javax.swing.JLabel jLabelCodCar;
-    private javax.swing.JLabel jLabelFecha;
     private javax.swing.JLabel jLabelNombreIns;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextFieldAlumnoDNI;
     private javax.swing.JTextField jTextFieldCod;
     private javax.swing.JTextField jTextFieldCodCar;
-    private javax.swing.JTextField jTextFieldFecha;
     private javax.swing.JTextField jTextFieldNombre;
     // End of variables declaration//GEN-END:variables
 }

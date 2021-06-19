@@ -121,15 +121,13 @@
                     <Component class="javax.swing.JTable" name="jTableAlumno">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="8" rowCount="250">
-                            <Column editable="true" title="DNI" type="java.lang.Integer"/>
-                            <Column editable="true" title="NOMBRE" type="java.lang.String"/>
-                            <Column editable="true" title="APELLIDO" type="java.lang.String"/>
-                            <Column editable="true" title="FECHA DE NACIMIENTO" type="java.lang.String"/>
-                            <Column editable="true" title="DOMICILIO" type="java.lang.String"/>
-                            <Column editable="true" title="EMAIL" type="java.lang.String"/>
-                            <Column editable="true" title="TELEFONO" type="java.lang.Integer"/>
-                            <Column editable="true" title="CODIGO INS" type="java.lang.Integer"/>
+                          <Table columnCount="6" rowCount="1">
+                            <Column editable="false" title="DNI" type="java.lang.Integer"/>
+                            <Column editable="false" title="NOMBRE" type="java.lang.String"/>
+                            <Column editable="false" title="APELLIDO" type="java.lang.String"/>
+                            <Column editable="false" title="DOMICILIO" type="java.lang.String"/>
+                            <Column editable="false" title="TELEFONO" type="java.lang.Integer"/>
+                            <Column editable="false" title="CODIGO INS" type="java.lang.Integer"/>
                           </Table>
                         </Property>
                       </Properties>
@@ -258,13 +256,12 @@
                     <Component class="javax.swing.JTable" name="jTableProfesor">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="6" rowCount="250">
-                            <Column editable="true" title="DNI" type="java.lang.Integer"/>
-                            <Column editable="true" title="Nombre" type="java.lang.String"/>
-                            <Column editable="true" title="Apellido" type="java.lang.String"/>
-                            <Column editable="true" title="FechaNac" type="java.lang.String"/>
-                            <Column editable="true" title="Domicilio" type="java.lang.String"/>
-                            <Column editable="true" title="Telefono" type="java.lang.String"/>
+                          <Table columnCount="5" rowCount="1">
+                            <Column editable="false" title="DNI" type="java.lang.Integer"/>
+                            <Column editable="false" title="Nombre" type="java.lang.String"/>
+                            <Column editable="false" title="Apellido" type="java.lang.String"/>
+                            <Column editable="false" title="Domicilio" type="java.lang.String"/>
+                            <Column editable="false" title="Telefono" type="java.lang.String"/>
                           </Table>
                         </Property>
                       </Properties>
@@ -280,9 +277,8 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jButtonModProfe" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jButtonNuevoProfe" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jButtonNuevoProfe" alignment="1" pref="239" max="32767" attributes="0"/>
                                   <Component id="jButtonElimProfe" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jButtonInsProfe" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -296,8 +292,6 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jButtonModProfe" min="-2" pref="45" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jButtonInsProfe" min="-2" pref="37" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                               <Component id="jButtonElimProfe" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -318,11 +312,6 @@
                     <Component class="javax.swing.JButton" name="jButtonElimProfe">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="ELIMINAR"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="jButtonInsProfe">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="INSCRIBIR A MATERIA"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -406,11 +395,11 @@
                     <Component class="javax.swing.JTable" name="jTableMateria">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="250">
-                            <Column editable="true" title="CODIGO" type="java.lang.Integer"/>
-                            <Column editable="true" title="NOMBRE" type="java.lang.String"/>
-                            <Column editable="true" title="DNI PROFESOR" type="java.lang.Integer"/>
-                            <Column editable="true" title="NOMBRE PROFESOR" type="java.lang.String"/>
+                          <Table columnCount="4" rowCount="1">
+                            <Column editable="false" title="CODIGO" type="java.lang.Integer"/>
+                            <Column editable="false" title="NOMBRE" type="java.lang.String"/>
+                            <Column editable="false" title="DNI PROFESOR" type="java.lang.Integer"/>
+                            <Column editable="false" title="NOMBRE PROFESOR" type="java.lang.String"/>
                           </Table>
                         </Property>
                       </Properties>
@@ -536,16 +525,16 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTable" name="jTable3">
+                    <Component class="javax.swing.JTable" name="jTableCursado">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="6" rowCount="250">
-                            <Column editable="true" title="COD" type="java.lang.Object"/>
-                            <Column editable="true" title="MATERIA" type="java.lang.Object"/>
-                            <Column editable="true" title="PROFESOR" type="java.lang.String"/>
-                            <Column editable="true" title="DNI ALUMNO" type="java.lang.Integer"/>
-                            <Column editable="true" title="ALUMNO" type="java.lang.String"/>
-                            <Column editable="true" title="NOTA" type="java.lang.Integer"/>
+                          <Table columnCount="6" rowCount="1">
+                            <Column editable="false" title="COD" type="java.lang.Object"/>
+                            <Column editable="false" title="MATERIA" type="java.lang.Object"/>
+                            <Column editable="false" title="PROFESOR" type="java.lang.String"/>
+                            <Column editable="false" title="DNI ALUMNO" type="java.lang.Integer"/>
+                            <Column editable="false" title="ALUMNO" type="java.lang.String"/>
+                            <Column editable="false" title="NOTA" type="java.lang.Integer"/>
                           </Table>
                         </Property>
                       </Properties>
@@ -682,10 +671,10 @@
                     <Component class="javax.swing.JTable" name="jTableCarrera">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="3" rowCount="250">
-                            <Column editable="true" title="CODIGO" type="java.lang.Integer"/>
-                            <Column editable="true" title="NOMBRE" type="java.lang.String"/>
-                            <Column editable="true" title="DURACION" type="java.lang.Integer"/>
+                          <Table columnCount="3" rowCount="1">
+                            <Column editable="false" title="CODIGO" type="java.lang.Integer"/>
+                            <Column editable="false" title="NOMBRE" type="java.lang.String"/>
+                            <Column editable="false" title="DURACION" type="java.lang.Integer"/>
                           </Table>
                         </Property>
                       </Properties>
@@ -814,11 +803,10 @@
                     <Component class="javax.swing.JTable" name="jTableInscripcion">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="250">
-                            <Column editable="true" title="CODIGO" type="java.lang.Integer"/>
-                            <Column editable="true" title="NOMBRE" type="java.lang.String"/>
-                            <Column editable="true" title="FECHA" type="java.lang.String"/>
-                            <Column editable="true" title="CAR. COD." type="java.lang.Integer"/>
+                          <Table columnCount="3" rowCount="1">
+                            <Column editable="false" title="CODIGO" type="java.lang.Integer"/>
+                            <Column editable="false" title="NOMBRE" type="java.lang.String"/>
+                            <Column editable="false" title="CAR. COD." type="java.lang.Integer"/>
                           </Table>
                         </Property>
                       </Properties>

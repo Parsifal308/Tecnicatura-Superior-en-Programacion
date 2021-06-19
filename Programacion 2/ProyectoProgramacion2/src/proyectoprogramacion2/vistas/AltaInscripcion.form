@@ -72,20 +72,21 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jTextFieldCod" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabelNombreIns" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jTextFieldNombre" max="32767" attributes="0"/>
-                      </Group>
                       <Group type="102" attributes="0">
                           <Component id="jLabelCodCar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jTextFieldCodCar" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabelFecha" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabelNombreIns" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelAlumnoDNI" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jTextFieldFecha" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jTextFieldAlumnoDNI" max="32767" attributes="0"/>
+                              <Component id="jTextFieldNombre" pref="99" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -107,10 +108,10 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabelFecha" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextFieldFecha" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelAlumnoDNI" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldAlumnoDNI" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabelCodCar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextFieldCodCar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -131,11 +132,6 @@
             <Property name="text" type="java.lang.String" value="NOMBRE INS.:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabelFecha">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="FECHA"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabelCodCar">
           <Properties>
             <Property name="text" type="java.lang.String" value="COD. CAR.:"/>
@@ -145,9 +141,14 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldNombre">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextFieldFecha">
-        </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldCodCar">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelAlumnoDNI">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="DNI ALUMNO:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAlumnoDNI">
         </Component>
       </SubComponents>
     </Container>

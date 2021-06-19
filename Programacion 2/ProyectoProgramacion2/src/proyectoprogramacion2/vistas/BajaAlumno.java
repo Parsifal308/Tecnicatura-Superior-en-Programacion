@@ -147,6 +147,10 @@ public class BajaAlumno extends javax.swing.JFrame {
         return jTextFieldDNI;
     }
 
+    public void setjTextFieldDNI(String jTextFieldDNI) {
+        this.jTextFieldDNI.setText(jTextFieldDNI);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAceptar;
     private javax.swing.JButton jButtonCancelar;

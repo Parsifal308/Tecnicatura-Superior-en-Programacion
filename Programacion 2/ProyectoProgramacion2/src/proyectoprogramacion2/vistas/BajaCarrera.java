@@ -152,6 +152,10 @@ public class BajaCarrera extends javax.swing.JFrame {
         return jTextFieldCod;
     }
 
+    public void setjTextFieldCod(String jTextFieldCod) {
+        this.jTextFieldCod.setText(jTextFieldCod);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAceptar;
     private javax.swing.JButton jButtonCancelar;

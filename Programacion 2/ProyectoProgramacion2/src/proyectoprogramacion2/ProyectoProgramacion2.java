@@ -6,6 +6,7 @@
 package proyectoprogramacion2;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import proyectoprogramacion2.controlador.ControladorAlumno;
 import proyectoprogramacion2.controlador.ControladorCarrera;
 import proyectoprogramacion2.controlador.ControladorCursado;
@@ -13,6 +14,7 @@ import proyectoprogramacion2.controlador.ControladorInscripcion;
 import proyectoprogramacion2.controlador.ControladorMateria;
 import proyectoprogramacion2.controlador.ControladorProfesor;
 import proyectoprogramacion2.datos.Driver;
+import proyectoprogramacion2.modelos.Alumno;
 import proyectoprogramacion2.vistas.VistaInicio;
 import proyectoprogramacion2.vistas.MsjAlumno;
 
@@ -43,7 +45,15 @@ public class ProyectoProgramacion2 {
         
         //Testeando la conexion de mierda
         Driver driver = new Driver();
-        driver.conectarBD();
+        driver.conectarBD();  
+
+        //Se cargan los datos de la base de datos en las tablas al iniciar
+        contAlum.mostrarDatosTabla();
+        contCarr.mostrarDatosTabla();
+        contMat.mostrarDatosTabla();
+        contCurs.mostrarDatosTabla();
+        contProf.mostrarDatosTabla();
+        contIns.mostrarDatosTabla();
 
     }
     

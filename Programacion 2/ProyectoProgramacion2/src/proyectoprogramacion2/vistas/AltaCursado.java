@@ -187,6 +187,14 @@ public class AltaCursado extends javax.swing.JFrame {
         return jTextFieldNombre;
     }
 
+    public void setjTextFieldCodMat(String jTextFieldCodMat) {
+        this.jTextFieldCodMat.setText(jTextFieldCodMat);;
+    }
+
+    public void setjTextFieldNombre(String jTextFieldNombre) {
+        this.jTextFieldNombre.setText(jTextFieldNombre);;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAceptar;
     private javax.swing.JButton jButtonCancelar;

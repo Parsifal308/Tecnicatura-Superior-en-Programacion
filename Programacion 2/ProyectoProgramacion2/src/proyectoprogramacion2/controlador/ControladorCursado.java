@@ -2,6 +2,12 @@ package proyectoprogramacion2.controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+import proyectoprogramacion2.modelos.Cursado;
 import proyectoprogramacion2.vistas.AltaCursado;
 import proyectoprogramacion2.vistas.AsignarNota;
 import proyectoprogramacion2.vistas.BajaCursado;
@@ -11,6 +17,8 @@ import proyectoprogramacion2.vistas.MsjCursado;
 
 /* @author Guillermo Marinero*/
 public class ControladorCursado implements ActionListener {
+    Cursado cursado = new Cursado();
+    DefaultTableModel modeloTabla = new DefaultTableModel();
     private VistaInicio vIni;
     private MsjCursado vMsj;
     private AltaCursado vAlta;
@@ -45,6 +53,24 @@ public class ControladorCursado implements ActionListener {
         this.vAgregarNota.getjButtonAceptar().addActionListener(this);
         this.vAgregarNota.getjButtonCancelar().addActionListener(this);
     }
+        public void mostrarDatosTabla() throws ClassNotFoundException, SQLException{
+        ArrayList<Cursado> listaCursados = cursado.getCursadoDAO().leerCursados();
+        Object[] unCursado = new Object[3];
+        
+        modeloTabla = (DefaultTableModel)this.vIni.getjTableCursado().getModel();
+        modeloTabla.getDataVector().removeAllElements();
+        modeloTabla.fireTableDataChanged();  
+              
+        for (int i = 0; i < listaCursados.size(); i++) {
+            unCursado[0] = listaCursados.get(i).getAlumnoDNI();
+            unCursado[1] = listaCursados.get(i).getCodMateria();
+            unCursado[2] = listaCursados.get(i).getNotaObtenida();
+        
+            modeloTabla.addRow(unCursado);        
+        }
+        this.vIni.getjTableCursado().setModel(modeloTabla);      
+    }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -53,9 +79,33 @@ public class ControladorCursado implements ActionListener {
             vIni.setVisible(false);
             
         }else if(e.getSource().equals(vAlta.getjButtonAceptar())){  
-            //SI EXITO
-            vMsj.setVisible(true);
-            vAlta.setVisible(false);  
+            this.cursado.setCodMateria(Integer.valueOf(vAlta.getjTextFieldCodMat().getText()));
+            this.cursado.setAlumno(Integer.valueOf(vAlta.getjTextFieldNombre().getText()));
+            try {
+                this.cursado.getCursadoDAO().crearCurso(this.cursado);
+                vMsj.setjLabelMensjae("Cursado creada con exito");
+                vMsj.setVisible(true);
+                vAlta.setVisible(false); 
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorCursado.class.getName()).log(Level.SEVERE, null, ex);
+                vMsj.setjLabelMensjae("Se produjo una SQLException");
+                vMsj.setVisible(true);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(ControladorCursado.class.getName()).log(Level.SEVERE, null, ex);
+                vMsj.setjLabelMensjae("Se produjo una ClassNotFoundException");
+                vMsj.setVisible(true);
+            }finally{
+                this.cursado.cleanAtrib();
+                this.vAlta.setjTextFieldCodMat("");
+                this.vAlta.setjTextFieldNombre("");
+                try {
+                    this.mostrarDatosTabla();
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(ControladorCursado.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(ControladorCursado.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
             
         }else if(e.getSource().equals(vAlta.getjButtonCancelar())){  
             vAlta.setVisible(false);
@@ -66,9 +116,37 @@ public class ControladorCursado implements ActionListener {
             vIni.setVisible(false);
             
         }else if(e.getSource().equals(vModNota.getjButtonAceptar())){ 
-            //SI EXITO
-            vMsj.setVisible(true);
-            vModNota.setVisible(false);
+            this.cursado.setAlumno(Integer.valueOf(vModNota.getjTextFieldAlumnoDNI().getText()));
+            this.cursado.setCodMateria(Integer.valueOf(vModNota.getjTextFieldCodMat().getText()));
+            this.cursado.setNotaObtenida(Integer.valueOf(vModNota.getjTextFieldNota().getText()));
+
+            try {
+                this.cursado.getCursadoDAO().actualizarCursado(this.cursado);
+                vMsj.setjLabelMensjae("Cursado actualizado con Exito");
+                vMsj.setVisible(true);
+                vModNota.setVisible(false); 
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorCursado.class.getName()).log(Level.SEVERE, null, ex);
+                vMsj.setjLabelMensjae("Se produjo una SQLException al actualizar");
+                vMsj.setVisible(true);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(ControladorCursado.class.getName()).log(Level.SEVERE, null, ex);
+                vMsj.setjLabelMensjae("Se produjo una ClassNotFoundException al actualizar");
+                vMsj.setVisible(true);
+            }finally{
+                this.cursado.cleanAtrib();
+                this.vModNota.setjTextFieldAlumnoDNI("");
+                this.vModNota.setjTextFieldCodMat("");
+                this.vModNota.setjTextFieldNota("");
+
+                try {
+                    this.mostrarDatosTabla();
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(ControladorCursado.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(ControladorCursado.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
             
         }else if(e.getSource().equals(vModNota.getjButtonCancelar())){  
             vModNota.setVisible(false);
@@ -79,7 +157,34 @@ public class ControladorCursado implements ActionListener {
             vIni.setVisible(false);
             
         }else if(e.getSource().equals(vBaja.getjButtonAceptar())){ 
-            //SI EXITO
+            this.cursado.setAlumno(Integer.valueOf(vBaja.getjTextFieldAlumnoDNI().getText()));
+            this.cursado.setCodMateria(Integer.valueOf(vBaja.getjTextFieldCodMat().getText()));
+            try {
+                this.cursado.getCursadoDAO().eliminarCursado(this.cursado.getAlumnoDNI(), this.cursado.getCodMateria());
+                vMsj.setjLabelMensjae("Cursado eliminado con Exito");
+                vMsj.setVisible(true);
+                vBaja.setVisible(false); 
+            } catch (SQLException ex) {
+                Logger.getLogger(ControladorCursado.class.getName()).log(Level.SEVERE, null, ex);
+                vMsj.setjLabelMensjae("Se produjo una SQLException al intentar eliminar datos de alumno");
+                vMsj.setVisible(true);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(ControladorCursado.class.getName()).log(Level.SEVERE, null, ex);
+                vMsj.setjLabelMensjae("Se produjo una ClassNotFoundException al intentar elinar datos del alumno");
+                vMsj.setVisible(true);
+            }finally{
+                this.cursado.cleanAtrib();
+                this.vBaja.setjTextFieldAlumnoDNI("");
+                this.vBaja.setjTextFieldCodMat("");
+
+                try {
+                    this.mostrarDatosTabla();
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(ControladorCursado.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(ControladorCursado.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
             vMsj.setVisible(true);
             vBaja.setVisible(false);
             
@@ -106,11 +211,7 @@ public class ControladorCursado implements ActionListener {
             
         }else if(e.getSource().equals(vAgregarNota.getjButtonCancelar())){  
             vAgregarNota.setVisible(false);
-            vIni.setVisible(true);
-            
+            vIni.setVisible(true);     
         }
-    }
-    
-    
-    
+    }  
 }
