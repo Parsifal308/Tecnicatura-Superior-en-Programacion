@@ -96,8 +96,6 @@ public class ControladorAlumno implements ActionListener{
             altaAlum.setVisible(true);
             vIni.setVisible(false);
             
-            
-            //BOTON ACEPTAR DEL ALTA ALUMNO
         }else if(e.getSource().equals(altaAlum.getjButtonAceptarAltaAlumno())){  
             this.alumno.setDni(Integer.valueOf(altaAlum.getjTextFieldDNI().getText()));
             this.alumno.setNombre(String.valueOf(altaAlum.getjTextFieldNombre().getText()));
